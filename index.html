@@ -14,7 +14,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"WillyanPHP",
 "description":"Desenvolvimento de sistemas PDV, automações e integrações sob medida.",
-"image":"logo.png","areaServed":"BR"}
+"image":"logo.png","areaServed":"BR","sameAs":["https://www.instagram.com/willyan.neres"]}
 </script>
 <style>
 :root{--bg:#0a1228;--bg2:#111d3d;--card:#14224a;--gold:#e8b83c;--text:#f5f7fc;--muted:#b8c3dc;--line:#24356b}
@@ -113,15 +113,16 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:v
     <textarea id="msg" rows="3" placeholder="Descreva o que você precisa"></textarea>
     <button class="btn" type="submit">Enviar pelo WhatsApp</button>
   </form>
+  <p><a href="https://www.instagram.com/willyan.neres" target="_blank" rel="noopener" style="color:var(--gold)">Instagram @willyan.neres</a></p>
 </div></section>
 </main>
 
-<footer><div class="wrap">© <span id="ano"></span> WillyanPHP · Sistemas PDV e Automações · Atendimento remoto</div></footer>
+<footer><div class="wrap">© <span id="ano"></span> WillyanPHP · Sistemas PDV e Automações · Atendimento remoto · <a href="https://www.instagram.com/willyan.neres" target="_blank" rel="noopener" style="color:var(--gold)">@willyan.neres</a></div></footer>
 <a class="wa" href="#" data-wa>WhatsApp</a>
 
 <script>
-// ALTERE AQUI: número com código do país e DDD, só dígitos. Ex.: 5511999999999
-const WHATSAPP = "5500000000000";
+// Número com código do país e DDD, só dígitos.
+const WHATSAPP = "5511915168336";
 const link = t => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
 document.querySelectorAll("[data-wa]").forEach(a=>{
   a.href = link("Olá! Vi o site da WillyanPHP e gostaria de um orçamento.");
