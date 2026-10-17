@@ -3,18 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WillyanPHP | Sistemas PDV e Automações sob medida</title>
-<meta name="description" content="WillyanPHP desenvolve sistemas PDV, controle de estoque, automações e integrações sob medida para pequenos negócios. Atendimento remoto. Peça seu orçamento.">
+<title>WillPDV | Sistema de PDV para boates e casas noturnas</title>
+<meta name="description" content="WillPDV: sistema de ponto de venda para boates e casas noturnas. Comandas, mesas, comissão, fechamento de turno, estoque e relatórios. Funciona sem internet. Mensalidade sob consulta.">
 <meta name="theme-color" content="#0a1228">
 <link rel="icon" href="favicon.png">
-<meta property="og:title" content="WillyanPHP | Sistemas PDV e Automações">
-<meta property="og:description" content="Sistemas PDV, automações e integrações sob medida para o seu negócio.">
+<meta property="og:title" content="WillPDV | Sistema de PDV para boates e casas noturnas">
+<meta property="og:description" content="Comandas, mesas, comissão, fechamento de turno, estoque e relatórios. Em uso em casas noturnas.">
 <meta property="og:image" content="og.png">
 <meta property="og:type" content="website">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"WillyanPHP",
-"description":"Desenvolvimento de sistemas PDV, automações e integrações sob medida.",
-"image":"logo.png","areaServed":"BR","sameAs":["https://www.instagram.com/willyan.neres"]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"WillPDV",
+"applicationCategory":"BusinessApplication","operatingSystem":"Windows",
+"description":"Sistema de ponto de venda para boates e casas noturnas: comandas, mesas, comissão, turnos, estoque e relatórios.",
+"author":{"@type":"Person","name":"Willyan"},"image":"logo.png","sameAs":["https://www.instagram.com/willyan.neres"]}
 </script>
 <style>
 :root{--bg:#0a1228;--bg2:#111d3d;--card:#14224a;--gold:#e8b83c;--text:#f5f7fc;--muted:#b8c3dc;--line:#24356b}
@@ -22,117 +23,215 @@
 html{scroll-behavior:smooth}
 body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;z-index:10;background:rgba(10,18,40,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:rgba(10,18,40,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
 .brand img{width:36px;height:36px;border-radius:8px}
 .brand b{color:var(--gold)}
-nav{display:flex;gap:22px;font-size:.95rem;color:var(--muted)}
+nav{display:flex;gap:20px;font-size:.93rem;color:var(--muted)}
 nav a:hover{color:var(--text)}
-.btn{display:inline-block;background:var(--gold);color:#1a1405;font-weight:700;padding:13px 24px;border-radius:10px;transition:transform .15s,filter .15s}
+.btn{display:inline-block;background:var(--gold);color:#1a1405;font-weight:700;padding:13px 24px;border-radius:10px;transition:transform .15s,filter .15s;border:0;font:inherit;font-weight:700;cursor:pointer}
 .btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
 .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
-.hero{padding:84px 0 72px;background:radial-gradient(circle at 50% 0%,#1b2f66 0%,var(--bg) 65%);text-align:center}
-.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.15;font-weight:800;max-width:780px;margin:0 auto 18px}
+.btn.sm{padding:9px 16px;font-size:.92rem}
+.hero{padding:76px 0 60px;background:radial-gradient(circle at 50% 0%,#1b2f66 0%,var(--bg) 65%);text-align:center}
+.tag{display:inline-block;border:1px solid var(--line);color:var(--gold);border-radius:999px;padding:5px 14px;font-size:.85rem;margin-bottom:18px}
+.hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.15;font-weight:800;max-width:800px;margin:0 auto 18px}
 .hero h1 span{color:var(--gold)}
-.hero p{color:var(--muted);font-size:1.1rem;max-width:620px;margin:0 auto 32px}
-.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero p.lead{color:var(--muted);font-size:1.1rem;max-width:660px;margin:0 auto 30px}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero .shot{margin:46px auto 0;max-width:960px;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.casas{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);text-align:center}
+.casas p{color:var(--muted);font-size:.9rem;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.casas ul{list-style:none;padding:0;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.casas li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:10px 22px;font-weight:700}
 section{padding:72px 0}
 section h2{font-size:1.9rem;margin-bottom:8px}
-section .sub{color:var(--muted);margin-bottom:36px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+section .sub{color:var(--muted);margin-bottom:36px;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
-.card .ic{font-size:1.6rem;color:var(--gold);font-family:ui-monospace,Menlo,monospace;margin-bottom:10px}
-.card h3{font-size:1.1rem;margin-bottom:6px}
-.card p{color:var(--muted);font-size:.95rem}
+.card .ic{font-size:1.5rem;color:var(--gold);font-family:ui-monospace,Menlo,monospace;margin-bottom:8px}
+.card h3{font-size:1.08rem;margin-bottom:6px}
+.card p{color:var(--muted);font-size:.94rem}
 .alt{background:var(--bg2)}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.gal figure{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:zoom-in}
+.gal figure img{width:100%;height:auto;transition:transform .25s}
+.gal figure:hover img{transform:scale(1.02)}
+.gal figcaption{padding:14px 18px}
+.gal figcaption b{display:block}
+.gal figcaption span{color:var(--muted);font-size:.9rem}
+.note{color:var(--muted);font-size:.88rem;margin-top:18px}
+.lb{position:fixed;inset:0;background:rgba(3,6,16,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-height:92vh;border-radius:10px;border:1px solid var(--line)}
 .steps{counter-reset:s}
-.steps .card{position:relative;padding-top:50px}
+.steps .card{position:relative;padding-top:52px}
 .steps .card::before{counter-increment:s;content:counter(s);position:absolute;top:16px;left:24px;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#1a1405;font-weight:800;display:grid;place-items:center;font-size:.9rem}
+.price{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:center}
+.price .box{background:var(--card);border:1px solid var(--gold);border-radius:16px;padding:32px;text-align:center}
+.price .box strong{display:block;font-size:1.7rem;color:var(--gold);margin:6px 0 14px}
+.price ul{list-style:none;padding:0;color:var(--muted)}
+.price li{padding:6px 0 6px 26px;position:relative}
+.price li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700}
+details p{color:var(--muted);margin-top:10px}
 .contact{text-align:center}
-.contact p{color:var(--muted);max-width:560px;margin:0 auto 28px}
-form{max-width:480px;margin:0 auto 24px;display:grid;gap:12px;text-align:left}
+.contact p{color:var(--muted);max-width:560px;margin:0 auto 26px}
+form{max-width:480px;margin:0 auto 22px;display:grid;gap:12px;text-align:left}
 input,select,textarea{width:100%;padding:13px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
 footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted);font-size:.9rem}
+footer a{color:var(--gold)}
 .wa{position:fixed;right:18px;bottom:18px;z-index:20;background:#25d366;color:#fff;font-weight:700;padding:13px 18px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.35)}
-@media(max-width:640px){nav{display:none}.hero{padding:56px 0 48px}section{padding:52px 0}}
+@media(max-width:760px){nav{display:none}.hero{padding:52px 0 40px}section{padding:52px 0}.price{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <a class="brand" href="#"><img src="logo.png" alt="Logo WillyanPHP"><span>WILLYAN<b>PHP</b></span></a>
-  <nav><a href="#servicos">Serviços</a><a href="#como">Como funciona</a><a href="#contato">Contato</a></nav>
-  <a class="btn" href="#contato" data-wa>Orçamento</a>
+  <a class="brand" href="#"><img src="logo.png" alt="Logo WillyanPHP"><span>WILL<b>PDV</b></span></a>
+  <nav><a href="#recursos">Recursos</a><a href="#telas">Telas</a><a href="#como">Como funciona</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></nav>
+  <a class="btn sm" href="#" data-wa>Pedir demonstração</a>
 </div></header>
 
 <main>
 <section class="hero"><div class="wrap">
-  <h1>Sistemas <span>PDV</span> e <span>automações</span> feitos do seu jeito</h1>
-  <p>Desenvolvo soluções sob medida para organizar suas vendas, seu estoque e seus processos, sem planilhas bagunçadas e sem trabalho repetitivo.</p>
+  <span class="tag">Feito para casas noturnas</span>
+  <h1>O PDV que aguenta a <span>noite inteira</span> da sua casa</h1>
+  <p class="lead">Comandas, mesas, comissão, fechamento de turno, estoque e relatórios em um só sistema. Funciona sem depender da internet para vender no caixa.</p>
   <div class="cta">
-    <a class="btn" href="#" data-wa>Pedir orçamento no WhatsApp</a>
-    <a class="btn ghost" href="#servicos">Ver serviços</a>
+    <a class="btn" href="#" data-wa>Pedir demonstração no WhatsApp</a>
+    <a class="btn ghost" href="#telas">Ver o sistema</a>
   </div>
+  <div class="shot"><img src="img/caixa.webp" alt="Tela do caixa do WillPDV com mesas, comandas e total a pagar" width="1400" height="698"></div>
+  <p class="note">Telas de demonstração com dados fictícios.</p>
 </div></section>
 
-<section id="servicos"><div class="wrap">
-  <h2>Serviços</h2>
-  <p class="sub">Soluções para comércios, pequenas empresas e profissionais autônomos.</p>
+<div class="casas"><div class="wrap">
+  <p>Em uso em casas noturnas</p>
+  <ul><li>Casa Verde</li><li>Império Club</li><li>Jobs Night</li></ul>
+</div></div>
+
+<section id="recursos"><div class="wrap">
+  <h2>O que o WillPDV faz</h2>
+  <p class="sub">Pensado para a rotina real de boates e bares: muito movimento, caixa rápido e controle do que entra e sai.</p>
   <div class="grid">
-    <div class="card"><div class="ic">&lt;PDV/&gt;</div><h3>Sistema PDV</h3><p>Ponto de venda simples e rápido para registrar vendas, formas de pagamento e emitir relatórios.</p></div>
-    <div class="card"><div class="ic">&lt;/&gt;</div><h3>Controle de estoque</h3><p>Saiba o que entra, o que sai e o que está acabando, sem depender de papel ou planilha.</p></div>
-    <div class="card"><div class="ic">{auto}</div><h3>Automações</h3><p>Elimino tarefas repetitivas: relatórios, avisos, cadastros e rotinas do dia a dia da empresa.</p></div>
-    <div class="card"><div class="ic">&lt;-&gt;</div><h3>Integrações</h3><p>Conecto seus sistemas, planilhas e plataformas para os dados trabalharem juntos.</p></div>
-    <div class="card"><div class="ic">PHP</div><h3>Sistemas web sob medida</h3><p>Painéis, cadastros e sistemas administrativos acessíveis de qualquer lugar.</p></div>
-    <div class="card"><div class="ic">+</div><h3>Manutenção e suporte</h3><p>Ajustes, correções e melhorias contínuas para o sistema acompanhar o seu negócio.</p></div>
+    <div class="card"><div class="ic">#</div><h3>Mesas e comandas</h3><p>Abra por número, lance consumo na hora, veja o total, imprima a pré-conta e transfira itens entre comandas.</p></div>
+    <div class="card"><div class="ic">%</div><h3>Comissão das garotas</h3><p>Lance a comissão pelo número da garota, acompanhe quanto cada uma tem a receber e faça o acerto com recibo.</p></div>
+    <div class="card"><div class="ic">$</div><h3>Caixa e turnos</h3><p>Abertura e fechamento de turno, sangria, repique, gaveta, consumação mínima e limite por comanda.</p></div>
+    <div class="card"><div class="ic">▤</div><h3>Estoque</h3><p>Entradas, saídas, perdas e contagem. Avisa o que precisa repor e gera a lista de compras.</p></div>
+    <div class="card"><div class="ic">≣</div><h3>Relatórios</h3><p>Vendas por grupo, por dia e por hora, cancelamentos, fechamentos do caixa, garçons e comissões.</p></div>
+    <div class="card"><div class="ic">⎙</div><h3>Impressão térmica</h3><p>Cupom e pré-conta em impressora térmica e abertura da gaveta de dinheiro.</p></div>
+    <div class="card"><div class="ic">✓</div><h3>Controle e auditoria</h3><p>Níveis de acesso por função e registro de quem cancelou, alterou ou liberou cada operação.</p></div>
+    <div class="card"><div class="ic">☁</div><h3>Backup protegido</h3><p>Cópia dos dados com criptografia em pasta externa, para você recuperar o sistema em outra máquina.</p></div>
+    <div class="card"><div class="ic">✈</div><h3>Aviso ao dono pelo Telegram</h3><p>O resultado da noite e os avisos importantes chegam direto no seu celular.</p></div>
   </div>
 </div></section>
 
-<section id="como" class="alt"><div class="wrap">
+<section id="telas" class="alt"><div class="wrap">
+  <h2>Veja o sistema por dentro</h2>
+  <p class="sub">Clique em uma imagem para ampliar.</p>
+  <div class="gal">
+    <figure data-zoom><img src="img/painel.webp" alt="Painel inicial do WillPDV com vendas do dia" loading="lazy"><figcaption><b>Painel da casa</b><span>Faturamento, vendas da noite, contas e estoque num só lugar.</span></figcaption></figure>
+    <figure data-zoom><img src="img/caixa.webp" alt="Caixa com comanda aberta" loading="lazy"><figcaption><b>Caixa</b><span>Comandas em cartões, lançamento rápido e pagamento em um clique.</span></figcaption></figure>
+    <figure data-zoom><img src="img/comissoes.webp" alt="Tela de comissões a pagar" loading="lazy"><figcaption><b>Comissões</b><span>Quanto cada garota tem a receber e o histórico de lançamentos.</span></figcaption></figure>
+    <figure data-zoom><img src="img/estoque.webp" alt="Painel de estoque com produtos a repor" loading="lazy"><figcaption><b>Estoque</b><span>Situação de cada produto e o que precisa ser reposto.</span></figcaption></figure>
+    <figure data-zoom><img src="img/relatorio.webp" alt="Relatório de vendas por grupo" loading="lazy"><figcaption><b>Relatórios</b><span>Venda por grupo, por dia, por hora e muito mais.</span></figcaption></figure>
+  </div>
+  <p class="note">Imagens de demonstração com dados fictícios (a aparência pode variar no Windows de cada casa).</p>
+</div></section>
+
+<section id="como"><div class="wrap">
   <h2>Como funciona</h2>
-  <p class="sub">Um processo simples, com você acompanhando cada etapa.</p>
+  <p class="sub">Do primeiro contato ao caixa rodando, com acompanhamento.</p>
   <div class="grid steps">
-    <div class="card"><h3>Conversa</h3><p>Você me conta o que precisa e como seu negócio funciona hoje.</p></div>
-    <div class="card"><h3>Orçamento</h3><p>Envio uma proposta clara, com escopo e prazo, sem compromisso.</p></div>
-    <div class="card"><h3>Desenvolvimento</h3><p>Construo o sistema e mostro o andamento para você aprovar.</p></div>
-    <div class="card"><h3>Entrega e suporte</h3><p>Colocamos para funcionar e eu continuo disponível para ajustes.</p></div>
+    <div class="card"><h3>Conversa</h3><p>Você conta como a sua casa funciona: caixas, comandas, comissão e estoque.</p></div>
+    <div class="card"><h3>Instalação</h3><p>O WillPDV é instalado no computador do caixa e configurado com os produtos e regras da casa.</p></div>
+    <div class="card"><h3>Teste e ajustes</h3><p>Começamos acompanhando as primeiras noites para ajustar o que for preciso.</p></div>
+    <div class="card"><h3>Licença mensal e suporte</h3><p>Mensalidade com atualizações e suporte pelo WhatsApp.</p></div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="price">
+    <div>
+      <h2>Mensalidade</h2>
+      <p class="sub">O valor depende do tamanho e das necessidades da sua casa. Peça um orçamento sem compromisso.</p>
+      <ul>
+        <li>Licença mensal do sistema</li>
+        <li>Atualizações do sistema</li>
+        <li>Suporte pelo WhatsApp</li>
+        <li>Backup protegido dos dados</li>
+      </ul>
+    </div>
+    <div class="box"><span>Mensalidade</span><strong>Sob consulta</strong><a class="btn" href="#" data-wa>Pedir orçamento</a></div>
+  </div>
+</div></section>
+
+<section id="duvidas"><div class="wrap">
+  <h2>Dúvidas frequentes</h2>
+  <p class="sub">As respostas mais comuns, com transparência.</p>
+  <details><summary>Funciona sem internet?</summary><p>Sim. O caixa trabalha com os dados guardados no próprio computador, então a venda não para se a internet cair. A internet é usada só para licença, atualizações e avisos.</p></details>
+  <details><summary>O sistema emite nota fiscal?</summary><p>Não. O WillPDV não emite nota fiscal nem integra com maquininha (TEF). A emissão fiscal continua sendo feita pelo meio que a sua casa já usa.</p></details>
+  <details><summary>E se o computador estragar? Perco meus dados?</summary><p>O sistema faz backup com criptografia e permite guardar a cópia em uma pasta externa, para restaurar em outra máquina. Recomendamos testar a recuperação logo na instalação.</p></details>
+  <details><summary>Quantos caixas posso usar?</summary><p>No momento, o sistema é pensado para um caixa por instalação. Se a sua casa precisa de mais de um, fale comigo para avaliarmos.</p></details>
+  <details><summary>Posso pedir ajustes para a minha casa?</summary><p>Sim. O sistema evolui com o uso real das casas, e pedidos de ajuste são bem-vindos.</p></details>
+  <details><summary>Qual computador preciso ter?</summary><p>O WillPDV roda em computador com Windows. Impressora térmica e gaveta são opcionais.</p></details>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>Outros serviços</h2>
+  <p class="sub">Além do WillPDV, também desenvolvo soluções sob medida.</p>
+  <div class="grid">
+    <div class="card"><div class="ic">{auto}</div><h3>Automações</h3><p>Tarefas repetitivas, relatórios e rotinas do dia a dia da empresa.</p></div>
+    <div class="card"><div class="ic">&lt;-&gt;</div><h3>Integrações</h3><p>Conexão entre sistemas, planilhas e plataformas.</p></div>
+    <div class="card"><div class="ic">PHP</div><h3>Sistemas web</h3><p>Painéis, cadastros e sistemas administrativos sob medida.</p></div>
   </div>
 </div></section>
 
 <section id="contato" class="contact"><div class="wrap">
   <h2>Vamos conversar?</h2>
-  <p>Conte rapidamente o que você precisa e eu respondo pelo WhatsApp.</p>
+  <p>Conte rapidamente sobre a sua casa e eu respondo pelo WhatsApp.</p>
   <form id="f">
     <input id="nome" placeholder="Seu nome" required autocomplete="name">
+    <input id="casa" placeholder="Nome da casa">
     <select id="serv">
-      <option>Sistema PDV</option><option>Controle de estoque</option><option>Automação de processos</option>
-      <option>Integração de sistemas</option><option>Outro</option>
+      <option>Quero uma demonstração do WillPDV</option><option>Quero um orçamento do WillPDV</option>
+      <option>Automação ou integração</option><option>Outro assunto</option>
     </select>
-    <textarea id="msg" rows="3" placeholder="Descreva o que você precisa"></textarea>
+    <textarea id="msg" rows="3" placeholder="Conte o que você precisa"></textarea>
     <button class="btn" type="submit">Enviar pelo WhatsApp</button>
   </form>
   <p><a href="https://www.instagram.com/willyan.neres" target="_blank" rel="noopener" style="color:var(--gold)">Instagram @willyan.neres</a></p>
 </div></section>
 </main>
 
-<footer><div class="wrap">© <span id="ano"></span> WillyanPHP · Sistemas PDV e Automações · Atendimento remoto · <a href="https://www.instagram.com/willyan.neres" target="_blank" rel="noopener" style="color:var(--gold)">@willyan.neres</a></div></footer>
+<footer><div class="wrap">© <span id="ano"></span> WillyanPHP · WillPDV · Atendimento remoto · <a href="https://www.instagram.com/willyan.neres" target="_blank" rel="noopener">@willyan.neres</a></div></footer>
 <a class="wa" href="#" data-wa>WhatsApp</a>
+<div class="lb" id="lb"><img alt="" id="lbimg"></div>
 
 <script>
 // Número com código do país e DDD, só dígitos.
 const WHATSAPP = "5511915168336";
 const link = t => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
 document.querySelectorAll("[data-wa]").forEach(a=>{
-  a.href = link("Olá! Vi o site da WillyanPHP e gostaria de um orçamento.");
+  a.href = link("Olá! Vi o site do WillPDV e gostaria de uma demonstração.");
   a.target = "_blank"; a.rel = "noopener";
 });
 document.getElementById("f").addEventListener("submit",e=>{
   e.preventDefault();
-  const t = `Olá! Meu nome é ${nome.value}. Preciso de: ${serv.value}.\n${msg.value}`;
+  const t = `Olá! Meu nome é ${nome.value}${casa.value ? " (casa: " + casa.value + ")" : ""}.\n${serv.value}.\n${msg.value}`;
   window.open(link(t),"_blank","noopener");
 });
+const lb = document.getElementById("lb"), lbimg = document.getElementById("lbimg");
+document.querySelectorAll("[data-zoom]").forEach(f=>f.addEventListener("click",()=>{
+  const i = f.querySelector("img"); lbimg.src = i.src; lbimg.alt = i.alt; lb.classList.add("on");
+}));
+lb.addEventListener("click",()=>lb.classList.remove("on"));
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") lb.classList.remove("on"); });
 document.getElementById("ano").textContent = new Date().getFullYear();
 </script>
 </body>
